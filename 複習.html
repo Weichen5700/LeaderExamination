@@ -1514,6 +1514,19 @@
       document.getElementById('total-questions').textContent = filteredQuestions.length;
       renderQuestion();
     }
+	
+	function toggleQuickMode() {
+      quickMode = !quickMode;
+      if (quickMode) {
+        document.getElementById('hideAnswers').checked = true;
+        toggleAnswerVisibility();
+        renderQuickNavigation();
+      } else {
+        document.getElementById('hideAnswers').checked = false;
+        toggleAnswerVisibility();
+        restoreFixedButtons();
+      }
+    }
 
     // ★★ 下載／複製搜尋結果功能 ★★
 		function updateFilterDownloadVisibility() {
