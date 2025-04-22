@@ -104,7 +104,11 @@
       z-index: 1001;
       cursor: pointer;
     }
-	
+	.highlight {
+	  color: #9A0036;
+	  font-weight: bold;
+	  font-size: calc(1em + 0.1rem);
+	}
 	
     .mobile-note-btn { left: 0; }
     .mobile-copy-search-btn { left: 35px; }
@@ -311,6 +315,10 @@
           <input class="form-check-input" type="checkbox" id="hidePic" onchange="togglePicVisibility()" checked>
           <label class="form-check-label" for="hidePic">6. 隱藏Pic</label>
         </div>
+		<div class="form-check mb-2">
+			<input class="form-check-input" type="checkbox" id="toggleHighlight" onchange="toggleHighlight()">
+			<label class="form-check-label" for="toggleHighlight">7. 關鍵字標示</label>
+		</div>
         <div class="mb-2">
           <label for="categoryFilter">7. 依類別查詢：</label>
           <select id="categoryFilter" class="form-select" onchange="filterByCategory()">
@@ -422,6 +430,8 @@
     let isMultipleChoice = false;
     let answered = false;
     let quickMode = false;
+	let highlightEnabled = true;
+	
     window.currentQuestion = null;
 
     document.getElementById('categoryFilter').addEventListener('change', applyFilters);
@@ -467,6 +477,7 @@
           categories = [...new Set(questions.map(q => q.class))];
           filteredQuestions = [...questions];
           populateCategoryFilter();
+		  preprocessHighlights();
           renderQuestion();
           document.getElementById('fileInput').style.display = 'none';
           document.getElementById('github-load-btn').style.display = 'none';
@@ -521,6 +532,7 @@
           categories = [...new Set(questions.map(q => q.class))];
           filteredQuestions = [...questions];
           populateCategoryFilter();
+		  preprocessHighlights();
           renderQuestion();
           document.getElementById('fileInput').style.display = 'none';
           document.getElementById('github-load-btn').style.display = 'none';
@@ -579,9 +591,11 @@
           categories = [...new Set(questions.map(q => q.class))];
           filteredQuestions = [...questions];
           populateCategoryFilter();
+		  preprocessHighlights();
           renderQuestion();
           fileInput.style.display = 'none';
           document.getElementById('github-load-btn').style.display = 'none';
+		  document.getElementById('github-load-btn_s').style.display = 'none';
           document.getElementById('github-info-btn').style.display = 'none';
           const storedHideAnswers = localStorage.getItem('hideAnswersState');
           if (storedHideAnswers !== null) {
@@ -725,7 +739,7 @@
       isMultipleChoice = options.filter(opt => opt.answer === true).length > 1;
       let html = `
         <div class="question-content" style="position: relative;">
-          <h3>題目 ${q.sn}: <span class="question-class">[${q.class}]</span> ${q.question}</h3>
+          <h3>題目 ${q.sn}: [${q.class}] ${highlightText(q.question, q)}</h3>
           <div class="options">
            ${options.map((opt, i) => 
             `<label class="option" data-answer="${opt.answer}" data-text="選項 ${i + 1}: ${opt.option}" for="option-${i}">
@@ -793,6 +807,13 @@
       updateCopySearchButtonVisibility();
       appendFontAdjuster();
     }
+	
+	function highlightText(text, q) {
+	  if (!highlightEnabled || !q._highlightRegex) return text;
+	  return text.replace(q._highlightRegex, '<span class="highlight">$1</span>');
+	}
+
+
 
     function appendFontAdjuster() {
 		  const questionContainer = document.getElementById('question-container');
@@ -1517,6 +1538,12 @@
       renderQuestion();
     }
 	
+	function toggleHighlight() {
+	highlightEnabled = document.getElementById('toggleHighlight').checked;
+	// 重新 render 一次，讓開關立刻生效
+	renderQuestion();
+	}
+
 	function toggleQuickMode() {
       quickMode = !quickMode;
       if (quickMode) {
@@ -1529,6 +1556,25 @@
         restoreFixedButtons();
       }
     }
+	
+	function escapeRegex(str) {
+	  return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+	}
+	function preprocessHighlights() {
+	  questions.forEach(q => {
+		const m = q.felo && q.felo.match(/key\s*:\s*([^\r\n]+)/i);
+		if (!m) {
+		  q._highlightRegex = null;
+		} else {
+		  const keys = m[1].split
+
+		
+	(/[，,]/).map(s => escapeRegex(s.trim())).filter(Boolean);
+		  q._highlightRegex = new RegExp(`(${keys.join('|')})`, 'g');
+		}
+	  });
+	}
+
 
     // ★★ 下載／複製搜尋結果功能 ★★
 		function updateFilterDownloadVisibility() {
