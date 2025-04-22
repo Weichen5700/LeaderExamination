@@ -464,11 +464,17 @@
 			<div id="result-stats" class="text-center mt-3">
 				<p>總題數: <span id="total-stats">0</span> | 正確答題: <span id="correct-stats">0</span> | 錯誤: <span id="incorrect-stats">0</span> | 未選擇: <span id="unanswered-stats">0</span></p>
 			</div>
+				<div id="error-export" class="text-center mt-3 hidden">
+				  <input type="checkbox" id="includeOptionsCheckbox" checked style="margin-right:8px;">
+				  <label for="includeOptionsCheckbox" style="margin-right:15px;">包含選項</label>
+				  <button class="btn btn-success btn-sm" onclick="downloadErrorQuestions()">下載錯題</button>
+				  <button class="btn btn-info btn-sm ms-2" onclick="copyErrorQuestions()">複製錯題</button>
+				</div>
 			<!-- 新增顯示/隱藏題目總覽的切換按鈕 -->
 				<div class="text-center mt-3">
 				  <button class="btn btn-info" onclick="toggleQuestionSummary()">顯示/隱藏 題目總覽</button>
 				</div>
-
+				
 				<!-- 新增題目總覽區塊，預設隱藏 -->
 				<div id="question-summary-container" class="text-center mt-3 hidden">
 				  <div id="question-summary">
@@ -495,6 +501,7 @@ let timer;
 let timeElapsed = 0;
 let isReviewMode = false;
 let isGitHubLoad = false;
+let incorrectQuestions = [];
 
 google.charts.load('current', {packages: ['corechart']});
 google.charts.setOnLoadCallback(drawChart);
@@ -946,35 +953,38 @@ function calculateResults() {
     correctCount = 0;
     incorrectCount = 0;
     let unansweredCount = 0;
+	 incorrectQuestions = [];     
 
-    filteredQuestions.forEach((question, index) => {
-        const userAnswer = answers[index] || [];
-        const correctOptions = question.options.filter(opt => opt.answer).map(opt => opt.option);
+     filteredQuestions.forEach((question, index) => {
+		const userAnswer    = answers[index] || [];
+		const correctOpts   = question.options.filter(o => o.answer).map(o => o.option);
+		const isMulti       = Array.isArray(userAnswer);
+		const answeredNone  = isMulti ? userAnswer.length === 0 : !userAnswer;
 
-        if (Array.isArray(userAnswer)) {
-            if (userAnswer.length === 0) {
-                unansweredCount++;
-            } else {
-                const isCorrect = userAnswer.length === correctOptions.length && userAnswer.every(opt => correctOptions.includes(opt));
-                if (isCorrect) correctCount++;
-                else incorrectCount++;
-            }
-        } else {
-            if (!userAnswer) {
-                unansweredCount++;
-            } else if (userAnswer === correctOptions[0]) {
-                correctCount++;
-            } else {
-                incorrectCount++;
-            }
-        }
-    });
+		let isCorrect = false;
+		if (answeredNone) {
+		  unansweredCount++;
+		} else if (isMulti) {
+		  isCorrect = userAnswer.length === correctOpts.length &&
+					  userAnswer.every(o => correctOpts.includes(o));
+		} else {
+		  isCorrect = userAnswer === correctOpts[0];
+		}
 
-    // 更新統計顯示
-    document.getElementById('total-stats').textContent = filteredQuestions.length;
-    document.getElementById('correct-stats').textContent = correctCount;
-    document.getElementById('incorrect-stats').textContent = incorrectCount;
-    document.getElementById('unanswered-stats').textContent = unansweredCount;
+		if (isCorrect) { correctCount++; }
+		else {
+		  incorrectCount++;
+		  incorrectQuestions.push(question);   // ⬅️ 收集錯題
+		}
+	  });
+
+	  // 更新畫面統計
+	  document.getElementById('total-stats').textContent      = filteredQuestions.length;
+	  document.getElementById('correct-stats').textContent    = correctCount;
+	  document.getElementById('incorrect-stats').textContent  = incorrectCount;
+	  document.getElementById('unanswered-stats').textContent = unansweredCount;
+
+	  updateErrorExportVisibility();           // ⬅️ 決定按鈕顯示/隱藏
 }
 
 function drawChart() {
@@ -1158,6 +1168,61 @@ function generateQuestionSummary() {
   });
 }
 
+/* ================== 錯題收集 ================== */
+// ① 在你的 calculateResults() 裡，收集錯題
+//   找到原本的 calculateResults()，在 forEach 迴圈中：
+//   如果判定為錯誤 (或未選擇)，就 push 到 incorrectQuestions
+//   （示例：incorrectQuestions.push(question);）
+
+/* ================== 錯題匯出功能 ================== */
+function updateErrorExportVisibility () {
+  const box = document.getElementById('error-export');
+  if (!box) return;
+  box.classList.toggle('hidden', incorrectQuestions.length === 0);
+}
+
+function buildErrorText (includeOptions) {
+  let txt = '';
+  incorrectQuestions.forEach((q, idx) => {
+    if (includeOptions) {
+      txt += `NO:${idx + 1}/${incorrectQuestions.length}\n`;
+      txt += `題目 ${q.sn}: [${q.class}] ${q.question}\n`;
+      txt += '選項：\n';
+      q.options.forEach((o, i) => txt += `   ${i + 1}. ${o.option}\n`);
+      txt += '正確答案：\n';
+      q.options.forEach((o, i) => { if (o.answer) txt += `   ${i + 1}. ${o.option}\n`; });
+      txt += '\n';
+    } else {
+      let line = `NO:${idx + 1}-`;
+      let qText = q.question.trim();
+      if (!/[？?]$/.test(qText)) qText += '？';
+      line += `${qText} 正確答案：`;
+      q.options.forEach((o, i) => { if (o.answer) line += `${i + 1}. ${o.option} `; });
+      txt += `${line.trim()}\n`;
+    }
+  });
+  return txt;
+}
+
+function downloadErrorQuestions () {
+  const withOpts = document.getElementById('includeOptionsCheckbox').checked;
+  const blob = new Blob([buildErrorText(withOpts)], { type: 'text/plain' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'incorrect_questions.txt';
+  link.click();
+}
+
+function copyErrorQuestions () {
+  const withOpts = document.getElementById('includeOptionsCheckbox').checked;
+  const temp = document.createElement('textarea');
+  temp.value = buildErrorText(withOpts);
+  document.body.appendChild(temp);
+  temp.select();
+  document.execCommand('copy');
+  document.body.removeChild(temp);
+  alert('錯題已複製到剪貼簿！');
+}
 
 
 function startinfo() {
