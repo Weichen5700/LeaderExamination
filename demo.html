@@ -1,0 +1,1694 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韓國釜山五天四夜小資女自由行攻略</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            950: '#082f49'
+                        },
+                        secondary: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                            950: '#500724'
+                        },
+                        neutral: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                        serif: ['Noto Serif TC', 'serif']
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/preline@3.0.1/dist/preline.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-icons@1.13.14/iconfont/material-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        .lazy-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .lazy-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 font-sans smooth-scroll">
+    <!-- 導航欄 -->
+    <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl md:text-2xl font-serif font-bold text-primary-700 dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 transition-colors">
+                <span class="hidden md:inline">釜山小資女攻略</span>
+                <span class="inline md:hidden">釜山攻略</span>
+            </a>
+            <div class="flex items-center gap-2">
+                <button id="themeToggle" class="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors">
+                    <span class="dark:hidden material-icons text-neutral-700">light_mode</span>
+                    <span class="hidden dark:inline material-icons text-neutral-300">dark_mode</span>
+                </button>
+                <button class="lg:hidden p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors" data-hs-overlay="#mobile-menu">
+                    <span class="material-icons">menu</span>
+                </button>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="#overview" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">總覽</a>
+                    <a href="#itinerary" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">行程規劃</a>
+                    <a href="#attractions" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">景點推薦</a>
+                    <a href="#food" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">美食推薦</a>
+                    <a href="#souvenirs" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">伴手禮</a>
+                    <a href="#accommodation" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">住宿建議</a>
+                    <a href="#transportation" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">交通提示</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 移動端菜單 -->
+    <div id="mobile-menu" class="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full fixed top-0 left-0 transition-all duration-300 transform h-full max-w-xs w-full z-[60] bg-white dark:bg-neutral-800 border-r border-neutral-200 dark:border-neutral-700" tabindex="-1">
+        <div class="flex justify-between items-center px-4 py-3 border-b border-neutral-200 dark:border-neutral-700">
+            <h3 class="font-semibold text-neutral-800 dark:text-neutral-200">釜山小資女攻略</h3>
+            <button type="button" class="inline-flex flex-shrink-0 justify-center items-center w-8 h-8 rounded-full text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200" data-hs-overlay="#mobile-menu">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        <div class="p-4">
+            <ul class="space-y-4">
+                <li><a href="#overview" class="block py-2 px-3 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors" data-hs-overlay="#mobile-menu">總覽</a></li>
+                <li><a href="#itinerary" class="block py-2 px-3 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors" data-hs-overlay="#mobile-menu">行程規劃</a></li>
+                <li><a href="#attractions" class="block py-2 px-3 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors" data-hs-overlay="#mobile-menu">景點推薦</a></li>
+                <li><a href="#food" class="block py-2 px-3 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors" data-hs-overlay="#mobile-menu">美食推薦</a></li>
+                <li><a href="#souvenirs" class="block py-2 px-3 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors" data-hs-overlay="#mobile-menu">伴手禮</a></li>
+                <li><a href="#accommodation" class="block py-2 px-3 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors" data-hs-overlay="#mobile-menu">住宿建議</a></li>
+                <li><a href="#transportation" class="block py-2 px-3 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors" data-hs-overlay="#mobile-menu">交通提示</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 頂部橫幅 -->
+    <header class="relative bg-gradient-to-br from-primary-700 via-primary-600 to-primary-800 py-16 md:py-24">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1619267872583-9b5a5f3f31e1')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        <div class="container mx-auto px-4 relative">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 animate-[fadeIn_0.6s_ease-out]">韓國釜山五天四夜小資女自由行攻略</h1>
+                <p class="text-lg md:text-xl font-light text-white/90 mb-8 animate-[fadeIn_0.8s_ease-out]">經濟實惠的方式，深度體驗釜山的魅力</p>
+                <div class="flex flex-wrap justify-center gap-3 animate-[fadeIn_1s_ease-out]">
+                    <a href="#itinerary" class="inline-flex items-center px-6 py-3 bg-white text-primary-700 font-medium rounded-full shadow-lg hover:bg-primary-50 hover:shadow-xl transition transform hover:-translate-y-1">
+                        <span class="material-icons mr-2">map</span> 查看行程規劃
+                    </a>
+                    <a href="#attractions" class="inline-flex items-center px-6 py-3 bg-primary-800 bg-opacity-50 text-white font-medium rounded-full shadow-lg hover:bg-opacity-70 hover:shadow-xl transition transform hover:-translate-y-1 backdrop-blur-sm">
+                        <span class="material-icons mr-2">attractions</span> 探索熱門景點
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <!-- 總覽部分 -->
+        <section id="overview" class="mb-12 md:mb-20 lazy-section">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-serif font-bold text-neutral-900 dark:text-neutral-50 mb-6 flex items-center">
+                    <span class="text-primary-600 dark:text-primary-400 text-3xl mr-3 material-icons">explore</span>
+                    總覽
+                </h2>
+                <p class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed mb-6">
+                    釜山，韓國的第二大城，以其迷人的海港風情、豐富的文化景點、誘人的道地美食以及親民的物價，成為小資女們海外旅遊的絕佳選擇。本攻略專為預算有限、熱愛自由行的妳所設計，整理了五天四夜的行程建議，包含必訪景點、平價美食以及特色伴手禮，讓妳能以最經濟實惠的方式，深度體驗釜山的魅力。從繽紛的甘川洞文化村到熱鬧的南浦洞商圈，再到悠閒的海雲台沙灘，每一天都充滿驚喜與樂趣。
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-card hover:shadow-card-hover transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <i class="material-icons text-2xl text-primary-500 mr-3">savings</i>
+                            <h3 class="text-xl font-semibold">小資預算友善</h3>
+                        </div>
+                        <p class="text-neutral-600 dark:text-neutral-400">精心挑選的平價住宿、美食與景點，讓你在有限預算內獲得最佳體驗。</p>
+                    </div>
+                    <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-card hover:shadow-card-hover transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <i class="material-icons text-2xl text-primary-500 mr-3">calendar_month</i>
+                            <h3 class="text-xl font-semibold">詳細五日規劃</h3>
+                        </div>
+                        <p class="text-neutral-600 dark:text-neutral-400">覆蓋釜山最具代表性的景點，每日行程有序規劃，省時又省力。</p>
+                    </div>
+                    <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-card hover:shadow-card-hover transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <i class="material-icons text-2xl text-primary-500 mr-3">local_offer</i>
+                            <h3 class="text-xl font-semibold">在地體驗精選</h3>
+                        </div>
+                        <p class="text-neutral-600 dark:text-neutral-400">推薦道地美食、文化景點與特色伴手禮，帶你深入體驗釜山的魅力。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 行程規劃部分 -->
+        <section id="itinerary" class="mb-12 md:mb-20 lazy-section">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-serif font-bold text-neutral-900 dark:text-neutral-50 mb-6 flex items-center">
+                    <span class="text-primary-600 dark:text-primary-400 text-3xl mr-3 material-icons">map</span>
+                    行程規劃建議
+                </h2>
+                <p class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed mb-8">
+                    以下為兼顧景點豐富度、交通便利性及預算考量的小資女五天四夜釜山行程建議。
+                </p>
+
+                <div class="flex overflow-x-auto pb-4 mb-6 scrollbar-thin">
+                    <div class="flex min-w-max">
+                        <button class="itinerary-btn active px-5 py-3 rounded-t-lg border-b-2 border-primary-500 dark:border-primary-400 text-primary-700 dark:text-primary-400 font-medium bg-neutral-50 dark:bg-neutral-800" data-day="1">第一天</button>
+                        <button class="itinerary-btn px-5 py-3 rounded-t-lg border-b-2 border-transparent text-neutral-600 dark:text-neutral-400 font-medium hover:text-primary-600 dark:hover:text-primary-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors" data-day="2">第二天</button>
+                        <button class="itinerary-btn px-5 py-3 rounded-t-lg border-b-2 border-transparent text-neutral-600 dark:text-neutral-400 font-medium hover:text-primary-600 dark:hover:text-primary-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors" data-day="3">第三天</button>
+                        <button class="itinerary-btn px-5 py-3 rounded-t-lg border-b-2 border-transparent text-neutral-600 dark:text-neutral-400 font-medium hover:text-primary-600 dark:hover:text-primary-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors" data-day="4">第四天</button>
+                        <button class="itinerary-btn px-5 py-3 rounded-t-lg border-b-2 border-transparent text-neutral-600 dark:text-neutral-400 font-medium hover:text-primary-600 dark:hover:text-primary-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors" data-day="5">第五天</button>
+                    </div>
+                </div>
+
+                <div class="itinerary-content bg-white dark:bg-neutral-800 rounded-lg shadow-lg p-6 lg:p-8" data-day="1">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">第一天：抵達釜山，南浦洞經典巡禮</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div class="md:col-span-4 space-y-5">
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">下午</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">抵達金海國際機場(PUS)，搭乘機場輕軌轉地鐵至南浦洞或西面等區域的住宿點辦理入住手續。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">傍晚</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">前往BIFF廣場，可在此品嚐釜山著名小吃如堅果黑糖餅。接著漫步於光復路時尚文化街，感受釜山的潮流氣息。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">晚餐</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">可選擇在札嘎其市場周邊品嚐海鮮（建議多比價或選擇熟食攤位以控制預算），或於南浦洞商圈尋找平價道地美食，如豬腳、魚糕等。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">晚上</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">飯後可散步至龍頭山公園，欣賞釜山夜景。若預算有限，可不必登釜山塔，在公園內欣賞夜景亦別有風味。</p>
+                            </div>
+                        </div>
+                        <div class="md:col-span-1">
+                            <div class="bg-primary-50 dark:bg-neutral-700 p-4 rounded-lg">
+                                <h4 class="font-semibold text-primary-800 dark:text-primary-300 mb-3">今日亮點</h4>
+                                <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>BIFF廣場小吃</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>光復路逛街</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>龍頭山公園夜景</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itinerary-content bg-white dark:bg-neutral-800 rounded-lg shadow-lg p-6 lg:p-8 hidden" data-day="2">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">第二天：繽紛文化與絕美海景</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div class="md:col-span-4 space-y-5">
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">上午</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">搭乘公車或地鐵轉公車前往有「韓國馬丘比丘」之稱的甘川洞文化村，穿梭於色彩斑斕的小巷中，尋找小王子與沙漠狐狸的蹤跡，盡情拍照打卡。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">午餐</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">可在甘川洞文化村內的特色小店品嚐輕食，或返回南浦洞、西面等區域享用午餐。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">下午</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">前往松島，體驗松島天空步道，感受漫步海上的獨特視角。松島海上纜車可依個人預算及興趣選擇是否搭乘。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">傍晚</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">若時間允許且為週六，可於下午兩點左右前往影島大橋，觀賞大橋開合的特殊景象。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">晚餐</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">推薦品嚐釜山道地的豬肉湯飯，南浦洞或西面均有多家選擇。</p>
+                            </div>
+                        </div>
+                        <div class="md:col-span-1">
+                            <div class="bg-primary-50 dark:bg-neutral-700 p-4 rounded-lg">
+                                <h4 class="font-semibold text-primary-800 dark:text-primary-300 mb-3">今日亮點</h4>
+                                <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>甘川洞文化村</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>松島天空步道</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>道地豬肉湯飯</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itinerary-content bg-white dark:bg-neutral-800 rounded-lg shadow-lg p-6 lg:p-8 hidden" data-day="3">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">第三天：海雲台悠閒時光與璀璨夜景</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div class="md:col-span-4 space-y-5">
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">上午</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">搭乘地鐵前往海雲台海水浴場，在沙灘上悠閒漫步，欣賞海景，冬季時也可在此餵食海鷗。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">午餐</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">可至海雲台傳統市場品嚐各式在地小吃或平價海鮮料理。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">下午</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">體驗海雲台藍線公園的觀光列車，可選擇搭乘可愛的膠囊列車或沿著海岸線行駛的海岸列車，欣賞釜山東海岸的壯麗景色。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">傍晚</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">前往The Bay 101，此處是欣賞釜山現代化都市夜景的絕佳地點。小資女可選擇在周邊散步，感受浪漫氛圍，不一定需要進入店家消費。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">晚餐</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">可在海雲台周邊尋找特色餐廳，或返回西面等交通便利的區域用餐。</p>
+                            </div>
+                        </div>
+                        <div class="md:col-span-1">
+                            <div class="bg-primary-50 dark:bg-neutral-700 p-4 rounded-lg">
+                                <h4 class="font-semibold text-primary-800 dark:text-primary-300 mb-3">今日亮點</h4>
+                                <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>海雲台海灘</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>藍線公園列車</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>The Bay 101夜景</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itinerary-content bg-white dark:bg-neutral-800 rounded-lg shadow-lg p-6 lg:p-8 hidden" data-day="4">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">第四天：文青咖啡街與購物樂</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div class="md:col-span-4 space-y-5">
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">上午</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">前往釜山的購物天堂——西面商圈，這裡有大型百貨公司、流行服飾店以及熱鬧的西面地下街，滿足妳的購物慾。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">午餐</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">西面站周邊美食眾多，可選擇知名的松亭三代豬肉湯飯，或嘗試平價的韓式定食、刀削麵等。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">下午</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">漫步於充滿文藝氣息的田浦咖啡街，挑選一家風格獨特的咖啡廳，享受悠閒的下午茶時光。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">傍晚</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">搭乘地鐵前往廣安里海水浴場，欣賞釜山地標之一的廣安大橋，黃昏及夜晚的景色尤其迷人。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">晚餐</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">可在廣安里周邊品嚐海鮮料理或選擇其他特色餐廳。</p>
+                            </div>
+                        </div>
+                        <div class="md:col-span-1">
+                            <div class="bg-primary-50 dark:bg-neutral-700 p-4 rounded-lg">
+                                <h4 class="font-semibold text-primary-800 dark:text-primary-300 mb-3">今日亮點</h4>
+                                <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>西面購物天堂</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>田浦咖啡街</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>廣安大橋夜景</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itinerary-content bg-white dark:bg-neutral-800 rounded-lg shadow-lg p-6 lg:p-8 hidden" data-day="5">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">第五天：最後巡禮與滿載而歸</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div class="md:col-span-4 space-y-5">
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">上午</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">前往國際市場與富平罐頭市場（又稱夜市，但白天亦有部分店家營業），這裡充滿各式雜貨、服飾及小吃，是挖寶及購買伴手禮的好去處。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">午餐</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">可在市場內品嚐在地小吃，或返回住宿點附近簡單用餐。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-700 dark:text-primary-400 mb-2">下午</h4>
+                                <p class="text-neutral-700 dark:text-neutral-300">整理行囊，預留充足時間前往金海國際機場，搭機返回台灣，結束愉快的釜山之旅。</p>
+                            </div>
+                        </div>
+                        <div class="md:col-span-1">
+                            <div class="bg-primary-50 dark:bg-neutral-700 p-4 rounded-lg">
+                                <h4 class="font-semibold text-primary-800 dark:text-primary-300 mb-3">今日亮點</h4>
+                                <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>國際市場尋寶</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>購買伴手禮</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>美好回憶滿載</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 行程圖表 -->
+                <div class="mt-12 bg-white dark:bg-neutral-800 rounded-lg shadow-lg p-6 overflow-hidden">
+                    <h3 class="text-xl font-bold mb-4 text-neutral-800 dark:text-neutral-200">行程分布圖</h3>
+                    <div class="h-80 w-full">
+                        <canvas id="itineraryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 景點推薦部分 -->
+        <section id="attractions" class="mb-12 md:mb-20 lazy-section">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-serif font-bold text-neutral-900 dark:text-neutral-50 mb-6 flex items-center">
+                    <span class="text-primary-600 dark:text-primary-400 text-3xl mr-3 material-icons">photo_camera</span>
+                    景點推薦
+                </h2>
+                <p class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed mb-8">
+                    釜山融合了傳統與現代、山與海的多樣景致，以下精選景點分類，讓你依據興趣規劃行程。
+                </p>
+
+                <!-- 分類標簽 -->
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <button class="attraction-filter active py-2 px-4 rounded-full bg-primary-600 text-white font-medium text-sm" data-filter="all">全部景點</button>
+                    <button class="attraction-filter py-2 px-4 rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 font-medium text-sm hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors" data-filter="culture">文化藝術型</button>
+                    <button class="attraction-filter py-2 px-4 rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 font-medium text-sm hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors" data-filter="nature">自然海景型</button>
+                    <button class="attraction-filter py-2 px-4 rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 font-medium text-sm hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors" data-filter="shopping">購物逛街型</button>
+                </div>
+
+                <!-- 景點卡片 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- 文化藝術型 -->
+                    <div class="attraction-card bg-white dark:bg-neutral-800 rounded-xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1" data-category="culture">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1553001747-61d30c6620c3" alt="甘川洞文化村" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-primary-600 text-white text-xs font-bold px-2 py-1 rounded">文化藝術</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold mb-2 text-neutral-900 dark:text-neutral-100">甘川洞文化村</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">以其色彩繽紛的階梯式房屋和遍佈村內的藝術裝置聞名，被譽為「韓國的馬丘比丘」，是攝影愛好者的天堂。記得尋找小王子與沙漠狐狸的雕像合影。</p>
+                            <div class="flex items-center text-sm text-neutral-500 dark:text-neutral-500">
+                                <span class="flex items-center mr-4"><i class="material-icons text-xs mr-1">schedule</i> 建議停留：2-3小時</span>
+                                <span class="flex items-center"><i class="material-icons text-xs mr-1">subway</i> 交通：地鐵轉公車</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attraction-card bg-white dark:bg-neutral-800 rounded-xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1" data-category="culture">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1582435427344-5551e1cff0c7" alt="BIFF廣場" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-primary-600 text-white text-xs font-bold px-2 py-1 rounded">文化藝術</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold mb-2 text-neutral-900 dark:text-neutral-100">BIFF廣場</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">釜山國際電影節的發源地，地面上留有眾多電影名人的手印，同時也是品嚐街頭小吃如堅果黑糖餅的好去處。</p>
+                            <div class="flex items-center text-sm text-neutral-500 dark:text-neutral-500">
+                                <span class="flex items-center mr-4"><i class="material-icons text-xs mr-1">schedule</i> 建議停留：1-2小時</span>
+                                <span class="flex items-center"><i class="material-icons text-xs mr-1">subway</i> 交通：地鐵札嘎其站</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attraction-card bg-white dark:bg-neutral-800 rounded-xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1" data-category="culture">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1551313135-967f7e4e0e9f" alt="龍頭山公園與釜山塔" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-primary-600 text-white text-xs font-bold px-2 py-1 rounded">文化藝術</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold mb-2 text-neutral-900 dark:text-neutral-100">龍頭山公園與釜山塔</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">位於南浦洞的城市公園，可在此俯瞰釜山港及市區景色。釜山塔為地標性建築，可依預算選擇是否付費登塔觀景。</p>
+                            <div class="flex items-center text-sm text-neutral-500 dark:text-neutral-500">
+                                <span class="flex items-center mr-4"><i class="material-icons text-xs mr-1">schedule</i> 建議停留：1-2小時</span>
+                                <span class="flex items-center"><i class="material-icons text-xs mr-1">subway</i> 交通：地鐵南浦洞站</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 自然海景型 -->
+                    <div class="attraction-card bg-white dark:bg-neutral-800 rounded-xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1" data-category="nature">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1613614046865-13e8ba569a0b" alt="海雲台海水浴場" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-secondary-600 text-white text-xs font-bold px-2 py-1 rounded">自然海景</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold mb-2 text-neutral-900 dark:text-neutral-100">海雲台海水浴場</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">釜山最具代表性的沙灘，沙質細膩，海水清澈，適合散步、戲水（夏季）或觀賞海鷗（冬季）。</p>
+                            <div class="flex items-center text-sm text-neutral-500 dark:text-neutral-500">
+                                <span class="flex items-center mr-4"><i class="material-icons text-xs mr-1">schedule</i> 建議停留：2-3小時</span>
+                                <span class="flex items-center"><i class="material-icons text-xs mr-1">subway</i> 交通：地鐵海雲台站</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attraction-card bg-white dark:bg-neutral-800 rounded-xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1" data-category="nature">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1578372613144-000c735f8af5" alt="廣安里海水浴場" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-secondary-600 text-white text-xs font-bold px-2 py-1 rounded">自然海景</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold mb-2 text-neutral-900 dark:text-neutral-100">廣安里海水浴場</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">以能欣賞到壯觀的廣安大橋日夜景致而聞名，夜晚大橋點燈後尤為浪漫。</p>
+                            <div class="flex items-center text-sm text-neutral-500 dark:text-neutral-500">
+                                <span class="flex items-center mr-4"><i class="material-icons text-xs mr-1">schedule</i> 建議停留：1-2小時</span>
+                                <span class="flex items-center"><i class="material-icons text-xs mr-1">subway</i> 交通：地鐵廣安站</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attraction-card bg-white dark:bg-neutral-800 rounded-xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1" data-category="nature">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1588750099709-a9404e3c05cf" alt="松島天空步道" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-secondary-600 text-white text-xs font-bold px-2 py-1 rounded">自然海景</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold mb-2 text-neutral-900 dark:text-neutral-100">松島天空步道</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">一條延伸至海上的玻璃棧道，行走其上彷彿漫步雲端，可欣賞到松島周邊的海景。</p>
+                            <div class="flex items-center text-sm text-neutral-500 dark:text-neutral-500">
+                                <span class="flex items-center mr-4"><i class="material-icons text-xs mr-1">schedule</i> 建議停留：1小時</span>
+                                <span class="flex items-center"><i class="material-icons text-xs mr-1">subway</i> 交通：地鐵轉公車</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attraction-card bg-white dark:bg-neutral-800 rounded-xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1" data-category="nature">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1581350847194-88d37d906a69" alt="太宗台" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-secondary-600 text-white text-xs font-bold px-2 py-1 rounded">自然海景</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold mb-2 text-neutral-900 dark:text-neutral-100">太宗台</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">位於影島南端的自然公園，以其壯麗的海岸懸崖、茂密的森林和歷史悠久的燈塔聞名。園區較大，可搭乘「Danubi遊園列車」輕鬆遊覽。</p>
+                            <div class="flex items-center text-sm text-neutral-500 dark:text-neutral-500">
+                                <span class="flex items-center mr-4"><i class="material-icons text-xs mr-1">schedule</i> 建議停留：2-3小時</span>
+                                <span class="flex items-center"><i class="material-icons text-xs mr-1">directions_bus</i> 交通：公車</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attraction-card bg-white dark:bg-neutral-800 rounded-xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1" data-category="nature">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1584689855209-01a3662c6039" alt="海雲台藍線公園" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-secondary-600 text-white text-xs font-bold px-2 py-1 rounded">自然海景</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold mb-2 text-neutral-900 dark:text-neutral-100">海雲台藍線公園</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">由廢棄鐵道改建而成的觀光設施，提供可愛的「天空艙列車」和沿海行駛的「海岸列車」，是欣賞海雲台至松亭一帶海岸風光的絕佳方式。</p>
+                            <div class="flex items-center text-sm text-neutral-500 dark:text-neutral-500">
+                                <span class="flex items-center mr-4"><i class="material-icons text-xs mr-1">schedule</i> 建議停留：1-2小時</span>
+                                <span class="flex items-center"><i class="material-icons text-xs mr-1">subway</i> 交通：地鐵海雲台站</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 購物逛街型 -->
+                    <div class="attraction-card bg-white dark:bg-neutral-800 rounded-xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1" data-category="shopping">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1619119069152-a2b331eb392a" alt="南浦洞商圈" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-neutral-700 text-white text-xs font-bold px-2 py-1 rounded">購物逛街</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold mb-2 text-neutral-900 dark:text-neutral-100">南浦洞商圈</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">包含光復路時尚街、樂天百貨光復店（頂樓空中庭園可免費欣賞港景）、南浦地下街等，是釜山傳統的購物鬧區。</p>
+                            <div class="flex items-center text-sm text-neutral-500 dark:text-neutral-500">
+                                <span class="flex items-center mr-4"><i class="material-icons text-xs mr-1">schedule</i> 建議停留：3-4小時</span>
+                                <span class="flex items-center"><i class="material-icons text-xs mr-1">subway</i> 交通：地鐵南浦洞站</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attraction-card bg-white dark:bg-neutral-800 rounded-xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1" data-category="shopping">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1614696131542-99773db3075d" alt="西面商圈" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-neutral-700 text-white text-xs font-bold px-2 py-1 rounded">購物逛街</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold mb-2 text-neutral-900 dark:text-neutral-100">西面商圈</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">釜山的商業與交通中心，擁有大型百貨公司（如樂天百貨釜山總店、NC百貨）、眾多服飾品牌店、美妝店以及熱鬧的西面地下街，是年輕人聚集的潮流地。</p>
+                            <div class="flex items-center text-sm text-neutral-500 dark:text-neutral-500">
+                                <span class="flex items-center mr-4"><i class="material-icons text-xs mr-1">schedule</i> 建議停留：3-4小時</span>
+                                <span class="flex items-center"><i class="material-icons text-xs mr-1">subway</i> 交通：地鐵西面站</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attraction-card bg-white dark:bg-neutral-800 rounded-xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1" data-category="shopping">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1650309543667-5dbcb3a4ba6c" alt="國際市場與富平罐頭市場" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-neutral-700 text-white text-xs font-bold px-2 py-1 rounded">購物逛街</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold mb-2 text-neutral-900 dark:text-neutral-100">國際市場與富平罐頭市場</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">充滿歷史感的傳統市場，販售各式服飾、雜貨、紀念品及道地小吃，富平罐頭市場在夜晚則變身為熱鬧的夜市。</p>
+                            <div class="flex items-center text-sm text-neutral-500 dark:text-neutral-500">
+                                <span class="flex items-center mr-4"><i class="material-icons text-xs mr-1">schedule</i> 建議停留：2-3小時</span>
+                                <span class="flex items-center"><i class="material-icons text-xs mr-1">subway</i> 交通：地鐵札嘎其站</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attraction-card bg-white dark:bg-neutral-800 rounded-xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1" data-category="shopping">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1590664822069-f3efed3e4a2a" alt="田浦咖啡街" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-neutral-700 text-white text-xs font-bold px-2 py-1 rounded">購物逛街</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold mb-2 text-neutral-900 dark:text-neutral-100">田浦咖啡街</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">位於西面附近，巷弄間隱藏著許多各具風格的獨立咖啡廳、甜點店及文創小店，是文青們不可錯過的地點。</p>
+                            <div class="flex items-center text-sm text-neutral-500 dark:text-neutral-500">
+                                <span class="flex items-center mr-4"><i class="material-icons text-xs mr-1">schedule</i> 建議停留：2小時</span>
+                                <span class="flex items-center"><i class="material-icons text-xs mr-1">directions_walk</i> 交通：步行自西面站</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 釜山景點地圖 -->
+                <div class="mt-12 bg-white dark:bg-neutral-800 rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-neutral-800 dark:text-neutral-200">釜山主要景點地圖</h3>
+                    <div class="mermaid">
+                        graph TD
+                            A[金海國際機場] --> B[南浦洞商圈]
+                            A --> C[西面商圈]
+                            B --> D[BIFF廣場]
+                            B --> E[龍頭山公園]
+                            B --> F[札嘎其市場]
+                            B --> G[國際市場]
+                            B --> H[富平罐頭市場]
+                            B --公車--> I[甘川洞文化村]
+                            B --公車--> J[松島天空步道]
+                            C --> K[田浦咖啡街]
+                            C --> L[西面地下街]
+                            C --地鐵--> M[海雲台海水浴場]
+                            M --> N[海雲台藍線公園]
+                            M --> O[The Bay 101]
+                            M --步行--> P[冬柏島公園]
+                            C --地鐵--> Q[廣安里海水浴場] 
+                            Q --> R[廣安大橋夜景]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 美食推薦部分 -->
+        <section id="food" class="mb-12 md:mb-20 lazy-section">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-serif font-bold text-neutral-900 dark:text-neutral-50 mb-6 flex items-center">
+                    <span class="text-primary-600 dark:text-primary-400 text-3xl mr-3 material-icons">restaurant</span>
+                    美食推薦
+                </h2>
+                <p class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed mb-8">
+                    釜山作為港口城市，有著豐富多樣的美食文化。以下精選釜山必嚐特色料理與平價美食選擇，讓你在有限預算內享受道地風味。
+                </p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+                    <!-- 釜山必吃特色 -->
+                    <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100 flex items-center">
+                                <span class="material-icons text-primary-500 mr-2">star</span>
+                                釜山必吃特色
+                            </h3>
+                            <ul class="space-y-5">
+                                <li class="flex">
+                                    <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae" alt="豬肉湯飯" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1">豬肉湯飯 (돼지국밥)</h4>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">釜山最具代表性的鄉土料理，將豬骨長時間熬煮成濃郁雪白的湯頭，搭配白飯和豬肉片一同享用，暖心暖胃。知名店家有松亭三代豬肉湯飯、雙胞胎豬肉湯飯等。</p>
+                                    </div>
+                                </li>
+                                <li class="flex">
+                                    <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                        <img src="https://images.unsplash.com/photo-1518992028580-6d57bd80f2a1" alt="釜山魚糕" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1">釜山魚糕 (부산어묵)</h4>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">以新鮮魚漿製成，口感Q彈，口味多樣，是釜山的特產之一。無論是街邊小吃攤的魚糕串，或是伴手禮店的魚糕禮盒，都值得一試。</p>
+                                    </div>
+                                </li>
+                                <li class="flex">
+                                    <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                        <img src="https://images.unsplash.com/photo-1612928572627-0d21a2837951" alt="堅果黑糖餅" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1">堅果黑糖餅 (씨앗호떡)</h4>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">主要在BIFF廣場販售的人氣街頭小吃，剛炸好的酥脆餅皮內，夾入香甜的黑糖漿與各式堅果，風味獨特。</p>
+                                    </div>
+                                </li>
+                                <li class="flex">
+                                    <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                        <img src="https://images.unsplash.com/photo-1615361200141-f45961a70238" alt="海鮮" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1">海鮮 (해물)</h4>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">靠海的釜山自然少不了新鮮海產。札嘎其市場是著名的海鮮集散地，可在此選購後請店家代客料理，但需注意價格透明度。此外，海雲台市場、廣安里海水浴場周邊也有不少海鮮餐廳可供選擇。</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 平價美食選擇 -->
+                    <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100 flex items-center">
+                                <span class="material-icons text-primary-500 mr-2">savings</span>
+                                平價美食選擇
+                            </h3>
+                            <ul class="space-y-5">
+                                <li class="flex">
+                                    <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                        <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7" alt="市場小吃" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1">市場小吃</h4>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">國際市場、富平罐頭市場、海雲台市場等地匯集了眾多平價且道地的韓國小吃，如辣炒年糕、血腸、煎餅、紫菜飯捲等，是體驗在地風味的好去處。</p>
+                                    </div>
+                                </li>
+                                <li class="flex">
+                                    <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                        <img src="https://images.unsplash.com/photo-1646628018424-2908a3542be0" alt="韓式家常定食" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1">韓式家常定食 (백반)</h4>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">部分在地餐館提供價格約7,000韓元起的家常定食，通常包含一主菜、白飯、湯以及多樣韓式小菜，經濟實惠又能品嚐到多種風味。</p>
+                                    </div>
+                                </li>
+                                <li class="flex">
+                                    <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d" alt="刀削麵、炸醬麵" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1">刀削麵 (칼국수)、炸醬麵 (짜장면)</h4>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">在釜田站及西面等區域，可以找到價格約3,000韓元起的平價麵食，份量足夠且美味。</p>
+                                    </div>
+                                </li>
+                                <li class="flex">
+                                    <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                        <img src="https://images.unsplash.com/photo-1607326007499-a65b25322305" alt="紫菜飯捲" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1">紫菜飯捲 (김밥)</h4>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">韓國常見的方便輕食，口味多樣，價格親民，適合在旅途中快速解決一餐。</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 價格參考表 -->
+                <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg overflow-hidden p-6">
+                    <h3 class="text-xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">美食價格參考表</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-neutral-200 dark:divide-neutral-700">
+                            <thead>
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">美食種類</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">價格區間 (韓元)</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">推薦店家/地點</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white dark:bg-neutral-800 divide-y divide-neutral-200 dark:divide-neutral-700">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-neutral-100">豬肉湯飯</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-400">7,000 ~ 9,000</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">松亭三代豬肉湯飯、雙胞胎豬肉湯飯</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-neutral-100">堅果黑糖餅</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-400">2,000 ~ 3,000</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">BIFF廣場小攤</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-neutral-100">魚糕</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-400">1,000 ~ 5,000</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">街邊小吃攤、札嘎其市場</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-neutral-100">韓式家常定食</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-400">7,000 ~ 10,000</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">西面、南浦洞的在地小店</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-neutral-100">刀削麵/炸醬麵</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-400">3,000 ~ 7,000</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">釜田站、西面站周邊</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-neutral-100">海鮮料理</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-400">15,000 ~ 50,000+</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">札嘎其市場、海雲台市場</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-neutral-100">炸雞啤酒套餐</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-400">16,000 ~ 25,000</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">BBQ、BHC等連鎖店</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-neutral-100">紫菜飯捲</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-400">2,500 ~ 4,000</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">便利商店、專門店</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 伴手禮推薦部分 -->
+        <section id="souvenirs" class="mb-12 md:mb-20 lazy-section">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-serif font-bold text-neutral-900 dark:text-neutral-50 mb-6 flex items-center">
+                    <span class="text-primary-600 dark:text-primary-400 text-3xl mr-3 material-icons">card_giftcard</span>
+                    伴手禮推薦
+                </h2>
+                <p class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed mb-8">
+                    想要帶點韓國的風味回家，又不想太傷荷包？以下精選多款經濟實惠又具特色的伴手禮，適合送禮或自用。
+                </p>
+
+                <!-- 伴手禮分類 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    <!-- 零食點心 -->
+                    <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-36 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1614735241165-6756e1df61ab" alt="韓國零食" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">零食點心</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">favorite</span>
+                                    <div>
+                                        <span class="font-medium">HBAF 杏仁果</span>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">口味眾多，如蜂蜜奶油、芥末、辣火雞、烤玉米等</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">favorite</span>
+                                    <div>
+                                        <span class="font-medium">Delight Project 低卡貝果餅乾</span>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">低溫烘烤的貝果切片，口感酥脆</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">favorite</span>
+                                    <div>
+                                        <span class="font-medium">釜山魚糕禮盒</span>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">釜山的代表性特產，包裝精美</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">favorite</span>
+                                    <div>
+                                        <span class="font-medium">韓國泡麵</span>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">如辛拉麵、安城湯麵等經典口味</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="mt-4 text-sm text-neutral-500 dark:text-neutral-500">
+                                <p>價格參考：1,000 ~ 20,000韓元</p>
+                                <p>購買地點：超市、便利商店、機場免稅店</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 美妝保養 -->
+                    <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-36 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1625772299848-391b6a87d7b3" alt="韓國美妝" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">美妝保養</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">favorite</span>
+                                    <div>
+                                        <span class="font-medium">Mediheal面膜</span>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">高效特強保濕導入面膜，平價實用</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">favorite</span>
+                                    <div>
+                                        <span class="font-medium">TOO COOL FOR SCHOOL 三色修容粉餅</span>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">經典熱銷的修容產品</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">favorite</span>
+                                    <div>
+                                        <span class="font-medium">SKINFOOD 胡蘿蔔鎮靜棉片</span>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">溫和舒緩肌膚的保養品</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">favorite</span>
+                                    <div>
+                                        <span class="font-medium">Olive Young 自有品牌商品</span>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">自有品牌的零食和美妝小物也頗受好評</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="mt-4 text-sm text-neutral-500 dark:text-neutral-500">
+                                <p>價格參考：5,000 ~ 30,000韓元</p>
+                                <p>購買地點：Olive Young、Lohbs、各大美妝店</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 特色小物 -->
+                    <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-36 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1583418007730-aa3a19a7f956" alt="韓國特色小物" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">特色小物</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">favorite</span>
+                                    <div>
+                                        <span class="font-medium">釜山特色紀念品</span>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">印有釜山風景或地標的明信片、磁鐵、鑰匙圈等</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">favorite</span>
+                                    <div>
+                                        <span class="font-medium">韓國酒類</span>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">燒酒及瑪格麗酒是韓國代表性的酒品</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">favorite</span>
+                                    <div>
+                                        <span class="font-medium">傳統調味料與茶品</span>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">柚子茶、辣椒醬、大醬等韓國家庭常備調味品</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">favorite</span>
+                                    <div>
+                                        <span class="font-medium">文具用品</span>
+                                        <p class="text-sm text-neutral-600 dark:text-neutral-400">韓國設計的筆記本、貼紙、紙膠帶等</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="mt-4 text-sm text-neutral-500 dark:text-neutral-500">
+                                <p>價格參考：3,000 ~ 25,000韓元</p>
+                                <p>購買地點：觀光景點紀念品店、東柏商會、超市</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 伴手禮推薦圖表 -->
+                <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg overflow-hidden p-6">
+                    <h3 class="text-xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">熱門伴手禮推薦指數</h3>
+                    <div class="h-80">
+                        <canvas id="souvenirChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 住宿建議部分 -->
+        <section id="accommodation" class="mb-12 md:mb-20 lazy-section">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-serif font-bold text-neutral-900 dark:text-neutral-50 mb-6 flex items-center">
+                    <span class="text-primary-600 dark:text-primary-400 text-3xl mr-3 material-icons">hotel</span>
+                    小資住宿建議
+                </h2>
+                <p class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed mb-8">
+                    選對住宿地點與類型對於小資旅行非常重要，以下總結了釜山各區域的特色與小資住宿選擇。
+                </p>
+
+                <!-- 區域選擇 -->
+                <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-6 mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">區域選擇</h3>
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-primary-50 dark:bg-neutral-700 p-5 rounded-lg">
+                                <h4 class="font-bold text-lg mb-2 text-primary-700 dark:text-primary-400">西面站周邊</h4>
+                                <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>交通最便捷的中心點，地鐵1、2號線交會</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>百貨公司、餐廳、商店林立，生活機能極佳</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>多家平價飯店、商務旅館及青年旅館</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-primary-50 dark:bg-neutral-700 p-5 rounded-lg">
+                                <h4 class="font-bold text-lg mb-2 text-primary-700 dark:text-primary-400">南浦洞周邊</h4>
+                                <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>鄰近札嘎其市場、BIFF廣場、國際市場等景點</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>逛街購物及品嚐美食都很方便</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>不少經濟型旅館和青年旅館</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-primary-50 dark:bg-neutral-700 p-5 rounded-lg">
+                                <h4 class="font-bold text-lg mb-2 text-primary-700 dark:text-primary-400">海雲台周邊</h4>
+                                <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>若偏愛海景且預算有限，可考慮此區</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>距離市中心稍遠，但可享受悠閒的海濱氛圍</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">check_circle</i>
+                                        <span>有平價民宿或旅館可選擇</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 住宿類型 -->
+                <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-6 mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">住宿類型</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+                            <div class="h-40 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1651920678413-846723f2e7fb" alt="青年旅館" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-lg mb-2 text-neutral-900 dark:text-neutral-100">青年旅館 (Guesthouse/Hostel)</h4>
+                                <ul class="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">chevron_right</i>
+                                        <span>提供宿舍床位或簡單私人房</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">chevron_right</i>
+                                        <span>價格最為親民，床位約20,000韓元起</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">chevron_right</i>
+                                        <span>設有公共廚房及交誼廳，適合獨自旅行或預算極為有限的旅客</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+                            <div class="h-40 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974" alt="平價商務旅館" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-lg mb-2 text-neutral-900 dark:text-neutral-100">平價商務旅館</h4>
+                                <ul class="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">chevron_right</i>
+                                        <span>提供乾淨舒適的客房及基本設施</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">chevron_right</i>
+                                        <span>價格約40,000~80,000韓元/晚</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">chevron_right</i>
+                                        <span>部分旅館會提供簡易早餐，是兼顧預算與住宿品質的選擇</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+                            <div class="h-40 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461" alt="Airbnb" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-lg mb-2 text-neutral-900 dark:text-neutral-100">Airbnb</h4>
+                                <ul class="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">chevron_right</i>
+                                        <span>有機會找到具當地特色的公寓或房間</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">chevron_right</i>
+                                        <span>價格範圍廣泛，有經濟型選擇</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="material-icons text-primary-600 dark:text-primary-400 mr-2 text-base">chevron_right</i>
+                                        <span>訂房前務必仔細閱讀評價、房屋守則，並與房東確認相關細節</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 住宿預算表 -->
+                <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">住宿預算參考表</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-neutral-200 dark:divide-neutral-700">
+                            <thead>
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">住宿類型</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">價格/晚 (韓元)</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">適合對象</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">備註</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white dark:bg-neutral-800 divide-y divide-neutral-200 dark:divide-neutral-700">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-neutral-100">青年旅館 (宿舍床位)</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-400">20,000 ~ 30,000</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">獨自旅行、背包客、超級省錢旅客</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">需共用衛浴，注重隱私者請考慮私人房間</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-neutral-100">青年旅館 (私人房)</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-400">40,000 ~ 60,000</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">兩人同行、需要隱私的經濟型旅客</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">有些仍需共用衛浴，預訂前需確認</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-neutral-100">平價商務旅館</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-400">40,000 ~ 80,000</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">一般旅客、希望基本舒適度的旅客</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">淡旺季價格差異大，可提前訂購享優惠</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-neutral-100">Airbnb (一般房間)</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-400">35,000 ~ 70,000</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">希望體驗當地生活、有自炊需求的旅客</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">地點分散，交通便利性需自行確認</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900 dark:text-neutral-100">連鎖酒店經濟房</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-600 dark:text-neutral-400">80,000 ~ 120,000</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">希望品質保證且預算稍寬裕的旅客</td>
+                                    <td class="px-6 py-4 text-sm text-neutral-600 dark:text-neutral-400">如Ibis Budget等，可加入會員獲得優惠</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 交通提示部分 -->
+        <section id="transportation" class="mb-12 md:mb-20 lazy-section">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-serif font-bold text-neutral-900 dark:text-neutral-50 mb-6 flex items-center">
+                    <span class="text-primary-600 dark:text-primary-400 text-3xl mr-3 material-icons">directions_subway</span>
+                    交通提示
+                </h2>
+                <p class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed mb-8">
+                    釜山的大眾運輸系統發達，掌握以下交通訣竅，將讓你的小資之旅更加順暢省錢。
+                </p>
+
+                <!-- 交通卡片 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="h-10 w-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-3">
+                                <i class="material-icons text-primary-600 dark:text-primary-400">subway</i>
+                            </span>
+                            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">主要交通工具</h3>
+                        </div>
+                        <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                            釜山地鐵目前有6條路線（含東海線及金海輕軌），路網覆蓋多數主要觀光景點，是最主要的交通方式。搭配市區公車，則可前往地鐵未能直達的區域。
+                        </p>
+                        <ul class="space-y-3 text-neutral-600 dark:text-neutral-400">
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">check_circle</span>
+                                <span>地鐵單程票價：1,500韓元起</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">check_circle</span>
+                                <span>公車單程票價：1,300韓元起</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">check_circle</span>
+                                <span>營運時間：大約05:30-24:00，視路線而定</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="h-10 w-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-3">
+                                <i class="material-icons text-primary-600 dark:text-primary-400">credit_card</i>
+                            </span>
+                            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">交通卡</h3>
+                        </div>
+                        <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                            強烈建議購買並儲值T-money卡（或Cashbee卡），此卡適用於韓國全國的地鐵、公車，部分計程車及便利商店也可使用。使用交通卡搭乘大眾運輸工具通常享有票價優惠及轉乘優惠。
+                        </p>
+                        <ul class="space-y-3 text-neutral-600 dark:text-neutral-400">
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">check_circle</span>
+                                <span>卡片費用：約2,500韓元（可退還或留作紀念）</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">check_circle</span>
+                                <span>可在便利商店、地鐵站購買與加值</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">check_circle</span>
+                                <span>享有10%左右的票價優惠和轉乘折扣</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="h-10 w-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-3">
+                                <i class="material-icons text-primary-600 dark:text-primary-400">flight_land</i>
+                            </span>
+                            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">機場交通</h3>
+                        </div>
+                        <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                            從金海國際機場前往市區，最經濟實惠的方式是搭乘金海輕軌電車至「沙上站(사상역)」或「大渚站(대저역)」，再轉乘釜山地鐵進入市區。
+                        </p>
+                        <ul class="space-y-3 text-neutral-600 dark:text-neutral-400">
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">check_circle</span>
+                                <span>金海輕軌電車票價：約1,500韓元</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">check_circle</span>
+                                <span>機場巴士：約7,000韓元起，依目的地而定</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">check_circle</span>
+                                <span>計程車：約25,000韓元起，視目的地而定</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="h-10 w-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-3">
+                                <i class="material-icons text-primary-600 dark:text-primary-400">local_taxi</i>
+                            </span>
+                            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">計程車與步行</h3>
+                        </div>
+                        <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                            釜山計程車起步價約3,800韓元（2025年資訊，可能調整），適合短程、攜帶大型行李或多人共乘時使用。在南浦洞、西面、海雲台等主要商圈或景點區域內，步行是探索巷弄小店、感受城市氛圍的最佳方式。
+                        </p>
+                        <ul class="space-y-3 text-neutral-600 dark:text-neutral-400">
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">check_circle</span>
+                                <span>夜間（00:00-04:00）及跨區域行駛可能會有額外加成</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">check_circle</span>
+                                <span>可使用Kakao T等叫車App</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary-500 mr-2 mt-0.5 text-base">check_circle</span>
+                                <span>商圈內景點通常步行距離可抵達，省錢又健康</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 釜山地鐵路線圖 -->
+                <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">釜山地鐵路線與主要觀光站點</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-neutral-200 dark:divide-neutral-700">
+                            <thead>
+                                <tr>
+                                    <th class="px-4 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">地鐵線</th>
+                                    <th class="px-4 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">主要觀光站點</th>
+                                    <th class="px-4 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">鄰近景點</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white dark:bg-neutral-800 divide-y divide-neutral-200 dark:divide-neutral-700">
+                                <tr>
+                                    <td class="px-4 py-4 whitespace-nowrap text-sm font-medium">
+                                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500 text-white text-xs font-bold mr-2">1</span>
+                                        1號線
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-neutral-600 dark:text-neutral-400">
+                                        西面站、札嘎其站、南浦洞站、土城站
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-neutral-600 dark:text-neutral-400">
+                                        西面商圈、札嘎其市場、BIFF廣場、龍頭山公園、國際市場
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-4 whitespace-nowrap text-sm font-medium">
+                                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-500 text-white text-xs font-bold mr-2">2</span>
+                                        2號線
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-neutral-600 dark:text-neutral-400">
+                                        西面站、海雲台站、廣安站
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-neutral-600 dark:text-neutral-400">
+                                        田浦咖啡街、海雲台海水浴場、廣安里海水浴場、冬柏島
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-4 whitespace-nowrap text-sm font-medium">
+                                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-yellow-500 text-white text-xs font-bold mr-2">3</span>
+                                        3號線
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-neutral-600 dark:text-neutral-400">
+                                        水營站
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-neutral-600 dark:text-neutral-400">
+                                        釜山市立美術館、釜山博物館
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-4 whitespace-nowrap text-sm font-medium">
+                                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-blue-500 text-white text-xs font-bold mr-2">4</span>
+                                        4號線
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-neutral-600 dark:text-neutral-400">
+                                        東萊站、安康站
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-neutral-600 dark:text-neutral-400">
+                                        東萊邑城、溫泉
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-4 whitespace-nowrap text-sm font-medium">
+                                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-purple-500 text-white text-xs font-bold mr-2">B</span>
+                                        釜山-金海輕軌
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-neutral-600 dark:text-neutral-400">
+                                        金海國際機場站、沙上站
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-neutral-600 dark:text-neutral-400">
+                                        金海國際機場、轉乘點
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁腳部分 -->
+    <footer class="bg-neutral-800 text-neutral-300 py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-neutral-700 pb-8 mb-8">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-serif font-bold text-white mb-2">釜山小資女攻略</h2>
+                    <p class="text-neutral-400">以最經濟實惠的方式，深度體驗釜山的魅力</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://twitter.com/username" class="h-10 w-10 rounded-full bg-neutral-700 flex items-center justify-center hover:bg-primary-700 transition-colors">
+                        <i class="fab fa-twitter text-white"></i>
+                    </a>
+                    <a href="https://instagram.com/username" class="h-10 w-10 rounded-full bg-neutral-700 flex items-center justify-center hover:bg-primary-700 transition-colors">
+                        <i class="fab fa-instagram text-white"></i>
+                    </a>
+                    <a href="mailto:email@example.com" class="h-10 w-10 rounded-full bg-neutral-700 flex items-center justify-center hover:bg-primary-700 transition-colors">
+                        <i class="fas fa-envelope text-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>作者：王大頭</p>
+                <p class="mt-2 text-neutral-500">&copy; 2025 釜山小資女自由行攻略. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回頂部按鈕 -->
+    <button id="backToTop" class="fixed bottom-6 right-6 h-12 w-12 rounded-full bg-primary-600 text-white shadow-lg hidden items-center justify-center hover:bg-primary-700 transition-colors focus:outline-none">
+        <span class="material-icons">keyboard_arrow_up</span>
+    </button>
+
+    <script>
+        // 主題切換功能
+        document.addEventListener('DOMContentLoaded', function () {
+            // 檢查系統偏好
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            }
+
+            // 主題切換按鈕
+            const themeToggle = document.getElementById('themeToggle');
+            themeToggle.addEventListener('click', function() {
+                document.documentElement.classList.toggle('dark');
+            });
+
+            // 初始化Mermaid
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: document.documentElement.classList.contains('dark') ? 'dark' : 'default',
+                securityLevel: 'loose'
+            });
+
+            // 行程標簽切換
+            const itineraryButtons = document.querySelectorAll('.itinerary-btn');
+            itineraryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 移除所有按鈕的active狀態
+                    itineraryButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-neutral-50', 'dark:bg-neutral-800', 'border-primary-500', 'dark:border-primary-400', 'text-primary-700', 'dark:text-primary-400');
+                        btn.classList.add('border-transparent', 'text-neutral-600', 'dark:text-neutral-400');
+                    });
+                    
+                    // 添加當前按鈕的active狀態
+                    this.classList.add('active', 'bg-neutral-50', 'dark:bg-neutral-800', 'border-primary-500', 'dark:border-primary-400', 'text-primary-700', 'dark:text-primary-400');
+                    this.classList.remove('border-transparent', 'text-neutral-600', 'dark:text-neutral-400');
+                    
+                    // 隱藏所有內容
+                    document.querySelectorAll('.itinerary-content').forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    
+                    // 顯示相應內容
+                    const day = this.getAttribute('data-day');
+                    document.querySelector(`.itinerary-content[data-day="${day}"]`).classList.remove('hidden');
+                });
+            });
+
+            // 景點篩選
+            const attractionFilters = document.querySelectorAll('.attraction-filter');
+            attractionFilters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    // 移除所有篩選按鈕的active狀態
+                    attractionFilters.forEach(btn => {
+                        btn.classList.remove('active', 'bg-primary-600', 'text-white');
+                        btn.classList.add('bg-neutral-200', 'dark:bg-neutral-700', 'text-neutral-700', 'dark:text-neutral-300');
+                    });
+                    
+                    // 添加當前篩選按鈕的active狀態
+                    this.classList.add('active', 'bg-primary-600', 'text-white');
+                    this.classList.remove('bg-neutral-200', 'dark:bg-neutral-700', 'text-neutral-700', 'dark:text-neutral-300');
+                    
+                    const category = this.getAttribute('data-filter');
+                    const cards = document.querySelectorAll('.attraction-card');
+                    
+                    cards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Chart.js - 行程分布圖
+            const itineraryCtx = document.getElementById('itineraryChart').getContext('2d');
+            const isDarkMode = document.documentElement.classList.contains('dark');
+            const textColor = isDarkMode ? '#f1f5f9' : '#334155';
+            
+            const itineraryChart = new Chart(itineraryCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['文化景點', '自然海景', '購物市集', '美食體驗', '休閒活動'],
+                    datasets: [
+                        {
+                            label: '五天行程分布',
+                            data: [4, 5, 3, 5, 2],
+                            backgroundColor: [
+                                'rgba(14, 165, 233, 0.7)',
+                                'rgba(52, 211, 153, 0.7)',
+                                'rgba(249, 115, 22, 0.7)',
+                                'rgba(236, 72, 153, 0.7)',
+                                'rgba(139, 92, 246, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgba(14, 165, 233, 1)',
+                                'rgba(52, 211, 153, 1)',
+                                'rgba(249, 115, 22, 1)',
+                                'rgba(236, 72, 153, 1)',
+                                'rgba(139, 92, 246, 1)'
+                            ],
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: textColor
+                            },
+                            grid: {
+                                color: isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: textColor
+                            },
+                            grid: {
+                                color: isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: textColor
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Chart.js - 伴手禮推薦指數
+            const souvenirCtx = document.getElementById('souvenirChart').getContext('2d');
+            const souvenirChart = new Chart(souvenirCtx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        '價格實惠',
+                        '攜帶方便',
+                        '保存期限',
+                        '送禮適合度',
+                        '韓國特色'
+                    ],
+                    datasets: [
+                        {
+                            label: '零食點心',
+                            data: [5, 4, 3, 4, 3],
+                            fill: true,
+                            backgroundColor: 'rgba(14, 165, 233, 0.2)',
+                            borderColor: 'rgba(14, 165, 233, 1)',
+                            pointBackgroundColor: 'rgba(14, 165, 233, 1)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgba(14, 165, 233, 1)'
+                        },
+                        {
+                            label: '美妝保養',
+                            data: [3, 3, 4, 5, 4],
+                            fill: true,
+                            backgroundColor: 'rgba(236, 72, 153, 0.2)',
+                            borderColor: 'rgba(236, 72, 153, 1)',
+                            pointBackgroundColor: 'rgba(236, 72, 153, 1)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgba(236, 72, 153, 1)'
+                        },
+                        {
+                            label: '特色小物',
+                            data: [4, 3, 5, 4, 5],
+                            fill: true,
+                            backgroundColor: 'rgba(139, 92, 246, 0.2)',
+                            borderColor: 'rgba(139, 92, 246, 1)',
+                            pointBackgroundColor: 'rgba(139, 92, 246, 1)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgba(139, 92, 246, 1)'
+                        }
+                    ]
+                },
+                options: {
+                    elements: {
+                        line: {
+                            borderWidth: 3
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
+                            },
+                            grid: {
+                                color: isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
+                            },
+                            pointLabels: {
+                                color: textColor
+                            },
+                            ticks: {
+                                backdropColor: 'transparent',
+                                color: textColor
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: textColor
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 懶加載動畫
+            const lazySections = document.querySelectorAll('.lazy-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            lazySections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // 返回頂部按鈕
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.remove('hidden');
+                    backToTopBtn.classList.add('flex');
+                } else {
+                    backToTopBtn.classList.add('hidden');
+                    backToTopBtn.classList.remove('flex');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
