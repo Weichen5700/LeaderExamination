@@ -762,8 +762,8 @@ function renderQuestion() {
 
     let optionsToDisplay;
     if (shuffleOptions) {
-        let regularOptions = question.options.filter(opt => !/皆是|皆非|皆可|皆對|皆錯|以上兩點皆須|以上皆須|皆否/.test(opt.option));
-        let specialOption = question.options.find(opt => /皆是|皆非|皆可|皆對|皆錯|以上兩點皆須|以上皆須|皆否/.test(opt.option));
+        let regularOptions = question.options.filter(opt => !/皆是|皆非|皆對|皆錯|以上兩點皆須|以上皆須|皆否/.test(opt.option));
+        let specialOption = question.options.find(opt => /皆是|皆非|皆對|皆錯|以上兩點皆須|以上皆須|皆否/.test(opt.option));
         regularOptions = regularOptions.sort(() => Math.random() - 0.5);
         if (specialOption) regularOptions.push(specialOption);
         optionsToDisplay = regularOptions;
