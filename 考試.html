@@ -951,42 +951,50 @@ function endTest() {
 
 // 修改 calculateResults 函數以計算未選擇的題目
 function calculateResults() {
-    correctCount = 0;
+    correctCount   = 0;
     incorrectCount = 0;
     let unansweredCount = 0;
-	 incorrectQuestions = [];     
+    incorrectQuestions = [];
 
-     filteredQuestions.forEach((question, index) => {
-		const userAnswer    = answers[index] || [];
-		const correctOpts   = question.options.filter(o => o.answer).map(o => o.option);
-		const isMulti       = Array.isArray(userAnswer);
-		const answeredNone  = isMulti ? userAnswer.length === 0 : !userAnswer;
+    filteredQuestions.forEach((question, index) => {
+        const userAnswer  = answers[index] || [];
+        const correctOpts = question.options.filter(o => o.answer).map(o => o.option);
+        const isMulti     = Array.isArray(userAnswer);
+        const answeredNone = isMulti ? userAnswer.length === 0 : !userAnswer;
 
-		let isCorrect = false;
-		if (answeredNone) {
-		  unansweredCount++;
-		} else if (isMulti) {
-		  isCorrect = userAnswer.length === correctOpts.length &&
-					  userAnswer.every(o => correctOpts.includes(o));
-		} else {
-		  isCorrect = userAnswer === correctOpts[0];
-		}
+        if (answeredNone) {
+            // 1️⃣ 未填寫：只算未填寫，不進入錯誤計算
+            unansweredCount++;
+        } else {
+            // 有填答案，才去判斷對錯
+            let isCorrect = false;
+            if (isMulti) {
+                isCorrect = userAnswer.length === correctOpts.length
+                         && userAnswer.every(o => correctOpts.includes(o));
+            } else {
+                isCorrect = userAnswer === correctOpts[0];
+            }
 
-		if (isCorrect) { correctCount++; }
-		else {
-		  incorrectCount++;
-		  incorrectQuestions.push(question);   // ⬅️ 收集錯題
-		}
-	  });
+            if (isCorrect) {
+                // 2️⃣ 填寫且正確
+                correctCount++;
+            } else {
+                // 3️⃣ 填寫但錯誤
+                incorrectCount++;
+                incorrectQuestions.push(question);
+            }
+        }
+    });
 
-	  // 更新畫面統計
-	  document.getElementById('total-stats').textContent      = filteredQuestions.length;
-	  document.getElementById('correct-stats').textContent    = correctCount;
-	  document.getElementById('incorrect-stats').textContent  = incorrectCount;
-	  document.getElementById('unanswered-stats').textContent = unansweredCount;
+    // 更新畫面統計
+    document.getElementById('total-stats').textContent      = filteredQuestions.length;
+    document.getElementById('correct-stats').textContent    = correctCount;
+    document.getElementById('incorrect-stats').textContent  = incorrectCount;
+    document.getElementById('unanswered-stats').textContent = unansweredCount;
 
-	  updateErrorExportVisibility();           // ⬅️ 決定按鈕顯示/隱藏
+    updateErrorExportVisibility();
 }
+
 
 function drawChart() {
     const data = google.visualization.arrayToDataTable([
