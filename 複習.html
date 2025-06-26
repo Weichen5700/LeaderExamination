@@ -274,6 +274,36 @@
   
   
     }
+	
+		/*── １. 桌面版把 0~7 項水平排 ──*/
+	@media (min-width: 769px) {
+  /* 隱藏 collapse（Bootstrap 原本就有 .collapse {display:none}） */
+  #collapseSettings.collapse {
+    display: none !important;
+  }
+  /* 展開後用 flex 水平排 */
+  #collapseSettings.collapse.show {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  /* 把每個選項當 flex item，取消原本的下邊距 */
+  #collapseSettings > .form-check,
+  #collapseSettings > .jump-to {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+  }
+}
+
+	.no-highlight .highlight {
+	  /* 只還原成一般文字 */
+	  background: none !important;
+	  color: inherit !important;
+	  font-weight: normal !important;
+	  font-size: inherit !important;
+	}
+
   </style>
 </head>
 <body>
@@ -1552,10 +1582,12 @@
     }
 	
 	function toggleHighlight() {
-	highlightEnabled = document.getElementById('toggleHighlight').checked;
-	// 重新 render 一次，讓開關立刻生效
-	renderQuestion();
+	  highlightEnabled = document.getElementById('toggleHighlight').checked;
+	  document.documentElement.classList.toggle('no-highlight', !highlightEnabled);
+	  renderQuestion();
 	}
+
+
 
 	function toggleQuickMode() {
       quickMode = !quickMode;
