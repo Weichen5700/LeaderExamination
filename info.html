@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>113年LeaderExamination - 起始頁面</title>
+    <title>114年LeaderExamination - 起始頁面</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -124,7 +124,7 @@
 
         .image-wrapper img {
             width: 100%;
-            height: auto;
+             height: 200px; /* ← 統一高度 */
             object-fit: contain;
             border-radius: 0.3125rem;
             box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
@@ -265,6 +265,21 @@
     background-color: #ff6f61; /* 設定顯眼的珊瑚紅背景 */
 }
 
+.image-wrapper a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #0077cc;
+}
+
+.image-wrapper a:hover {
+    text-decoration: underline;
+    color: #005fa3;
+}
+
+
+
     </style>
 </head>
 <body>
@@ -279,17 +294,17 @@
             <button id="exambtn" class="img-button" onclick="startExam()">
                 <span>模擬考試</span>
             </button>
-			 <button id="examPlan" class="img-button" onclick="startPlan()">
+            <button id="examPlan" class="img-button" onclick="startPlan()">
                 <span>讀書計畫</span>
             </button>
         </div>
 
-     <!-- 第四個區塊：公告 -->
+        <!-- 第四個區塊：公告 -->
         <div class="section announcement-section">
             <h2>最新公告</h2>
             <div class="announcement-item"><span class="new-tag">NEW</span>2025年2月25日：做最後一次的校稿</div>
             <div class="announcement-item">2025年2月20日：系統更新，新增夜間模式功能。</div>
-				<div class="announcement-item">工具只為了來驗證書的方法，四個區塊(1.題目 2.答案 3.文字IP 4.圖像)。</div>
+            <div class="announcement-item">工具只為了來驗證書的方法，四個區塊(1.題目 2.答案 3.文字IP 4.圖像)。</div>
         </div>
 
         <!-- 第三個區塊：圖片 -->
@@ -305,7 +320,25 @@
             </div>
         </div>
 
-        
+        <!-- 第五個區塊：參考資源 -->
+        <div class="section image-section">
+            <div class="image-wrapper text-center">
+                <img src="./img/learnway.jpg" alt="天才的學習方法">
+                <div class="mt-2">
+                    <a href="https://weichen5700.github.io/LeaderExamination/天才的學習方法%20-%20朱利奧·迪安杰里.html" target="_blank">
+                        🔗 天才的學習方法 - 朱利奧·迪安杰里
+                    </a>
+                </div>
+            </div>
+            <div class="image-wrapper text-center">
+                <img src="./img/notebooklm.jpg" alt="notebooklm">
+                <div class="mt-2">
+                    <a href="https://notebooklm.google.com/notebook/2127b075-1abb-4bac-9983-b866d45ca0a3" target="_blank">
+                        🔗 NotebookLLM 使用說明
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- 圖片全屏模態框 -->
@@ -321,24 +354,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     <script>
         function startReview() {
-            window.location.href = 'https://weichen5700.github.io/LeaderExamination/複習.html'; // 假設複習頁面命名為 review.html
+            window.location.href = 'https://weichen5700.github.io/LeaderExamination/複習.html';
         }
 
         function startExam() {
-            window.location.href = 'https://weichen5700.github.io/LeaderExamination/考試.html'; // 假設考試頁面命名為 exam.html
-        }
-		function startPlan() {
-            window.location.href = 'https://weichen5700.github.io/LeaderExamination/複習計畫.html'; // 假設考試頁面命名為 exam.html
+            window.location.href = 'https://weichen5700.github.io/LeaderExamination/考試.html';
         }
 
-        // 圖片點擊全屏查看
-        document.addEventListener('DOMContentLoaded', function() {
+        function startPlan() {
+            window.location.href = 'https://weichen5700.github.io/LeaderExamination/複習計畫.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
             var images = document.querySelectorAll('.image-section img');
             var modal = document.getElementById('imageModal');
             var modalImg = modal.querySelector('img');
 
-            images.forEach(function(img) {
-                img.addEventListener('click', function() {
+            images.forEach(function (img) {
+                img.addEventListener('click', function () {
                     modalImg.src = this.src;
                     var myModal = new bootstrap.Modal(modal);
                     myModal.show();
@@ -347,4 +380,5 @@
         });
     </script>
 </body>
+
 </html>
