@@ -123,6 +123,13 @@
 	  font-size: calc(1em + 0.1rem);
 	}
 	
+	.deep-purple {
+   color: #9575cd;/* 深紫色，也可以換成你喜歡的色碼 */
+  font-weight: bold;
+    font-size: 1.1em;
+}
+
+
     .mobile-note-btn { left: 0; }
     .mobile-copy-search-btn { left: 35px; }
     .mobile-quick-btn { left: 70px; }
@@ -782,7 +789,7 @@
       isMultipleChoice = options.filter(opt => opt.answer === true).length > 1;
       let html = `
         <div class="question-content" style="position: relative;">
-          <h3>題目 ${q.sn}: [${q.class}] ${highlightText(q.question, q)}</h3>
+          <h3><span class="deep-purple">題目 ${q.sn}: [${q.class}]</span> ${highlightText(q.question, q)}</h3>
           <div class="options">
            ${options.map((opt, i) => 
             `<label class="option" data-answer="${opt.answer}" data-text="選項 ${i + 1}: ${opt.option}" for="option-${i}">
