@@ -253,6 +253,48 @@
 		  cursor: pointer;
 		  border: 1px solid #ccc;
 		}
+		
+		.remark-block {
+		border-left: 6px solid transparent;
+		border-image: linear-gradient(to bottom, #9b59b6, #8e44ad) 1;
+		}
+		.felo-block {
+		border-left: 6px solid transparent;
+		border-image: linear-gradient(to bottom, #0dcaf0, #17a2b8) 1;
+		}
+		.remark-block,
+		.felo-block {
+		padding: 1.25rem;
+		}
+		
+       .remark-block {
+		background-color: #fcf8ff;  /* 淡紫 */
+		}
+		.felo-block {
+		background-color: #e8faff;  /* 淡青 */
+		}
+		
+        .remark-block h6,
+		.felo-block h6 {
+		  font-size: 1.2rem;
+		  font-weight: 700;
+		  color: #663399; /* 暖紫色 */
+		  margin-bottom: 0.75rem;
+		}
+		
+        .remark-block p,
+		.felo-block p {
+		  font-size: 1.1rem;      /* 從 0.95rem 放大到 1.1rem */
+		  font-style: italic;     /* 加點斜體趣味 */
+		  color: #444;            /* 加深文字，對比度更高 */
+		  line-height: 1.5;
+		  margin: 0.5rem 0 0;
+		}
+		
+		#remark-container,
+			#felo-container {
+			display: none;
+		}
 
         @media (max-width: 576px) {
             body {
@@ -443,7 +485,17 @@
 		</div>
 		<div class="col-12" id="question-container">
 			<h3 id="question-title" class="mt-3" style="font-size: 1.4rem;"></h3>
-			<div id="options" class="mt-3" style="font-size: 1.2rem;"></div>
+			<div id="options" class="mt-3" style="font-size: 1.2rem;"></div>			
+			 <!-- 新增：備註區塊 -->
+      <div id="remark-container" class="remark-block">
+        <h6>備註：</h6>
+        <p id="remark-text"></p>
+      </div>
+      <!-- 新增：Felo 區塊 -->
+      <div id="felo-container" class="felo-block">
+        <h6>Felo：</h6>
+        <p id="felo-text"></p>
+      </div>	  	 
 			<!-- 字體控制按鈕 -->
 			<div class="font-controls">
 				<button class="font-btn" onclick="changeFontSize(0.2)">A+</button>
@@ -754,6 +806,19 @@ function renderQuestion() {
         console.error('當前題目未定義，currentQuestionIndex:', currentQuestionIndex);
         return;
     }
+	
+	document.getElementById('remark-text').textContent = question.remark || '';
+    document.getElementById('felo-text').textContent   = question.felo   || '';
+	
+	
+    if (isReviewMode) {
+        document.getElementById('remark-container').style.display = question.remark ? 'block' : 'none';
+        document.getElementById('felo-container').style.display   = question.felo   ? 'block' : 'none';
+    } else {
+        document.getElementById('remark-container').style.display = 'none';
+        document.getElementById('felo-container').style.display   = 'none';
+    }
+	
 
     const correctOptions = question.options.filter(opt => opt.answer).map(opt => opt.option);
     const isMultipleChoice = correctOptions.length > 1;
