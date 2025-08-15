@@ -560,6 +560,14 @@
           alert('無法從 GitHub 載入，請檢查 URL 或使用手動上傳。');
         });
     }
+	
+	function isFormTypingTarget(target) {
+  if (!target) return false;
+  const tag = target.tagName;
+  return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target.isContentEditable;
+}
+
+
     
     function loadFromGitHub_s() {
       const githubFileUrl = 'https://weichen5700.github.io/LeaderExamination/uploadfile_s.txt';
@@ -949,14 +957,7 @@
       document.getElementById('fileInput').style.display = 'block';
     }
 
-    document.addEventListener('keydown', function(event) {
-      if (event.key === '+') {
-        const section = document.querySelector('.note-section');
-        if (section) {
-          section.style.display = section.style.display === 'none' ? 'block' : 'none';
-        }
-      }
-    });
+    
 
     function toggleRandomOrder() {
       randomOrder = document.getElementById('randomOrder').checked;
@@ -1176,15 +1177,7 @@
       updateProgress();
     }
 
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'PageUp' ) {
-        event.preventDefault();
-        prevQuestion();
-      } else if (event.key === 'PageDown' ) {
-        event.preventDefault();
-        nextQuestion();
-      }
-    });
+    
 
     document.getElementById('jump-input').addEventListener('keydown', function(event) {
       if (event.key === 'Enter') { jumpToQuestion(); }
@@ -1297,35 +1290,82 @@
       setTimeout(() => message.remove(), 2000);
     }
 
-    document.addEventListener('keydown', function(event) {
-      const isAnswerHidden = document.getElementById('hideAnswers').checked;
-      if (isAnswerHidden && !answered) {
-        const numberPressed = event.key;
-        const optionIndex = parseInt(numberPressed, 10) - 1;
-        if (optionIndex >= 0 && optionIndex < filteredQuestions[currentIndex].options.length) {
-          const checkboxes = document.querySelectorAll('.answer-checkbox');
-          const targetCheckbox = checkboxes[optionIndex];
-          if (targetCheckbox) {
-            targetCheckbox.checked = !targetCheckbox.checked;
-            if (!isMultipleChoice) {
-              checkAnswer(targetCheckbox);
-              answered = true;
-            }
-          }
+    
+document.addEventListener('keydown', function (event) {
+  // 1) 有在輸入框打字就不處理
+  if (isFormTypingTarget(event.target)) return;
+
+  // 2) 有按 Ctrl / Alt / Meta（Win/Command）就不處理，避免干擾快捷鍵
+  if (event.ctrlKey || event.altKey || event.metaKey) return;
+
+  // 3) 左右方向鍵：切換題目；上下讓瀏覽器自然捲動
+  if (event.key === 'ArrowLeft') {
+    event.preventDefault();
+    prevQuestion();
+    return;
+  }
+  if (event.key === 'ArrowRight') {
+    event.preventDefault();
+    nextQuestion();
+    return;
+  }
+
+  // 4) PageUp / PageDown：同你原本設定
+  if (event.key === 'PageUp') {
+    event.preventDefault();
+    prevQuestion();
+    return;
+  }
+  if (event.key === 'PageDown') {
+    event.preventDefault();
+    nextQuestion();
+    return;
+  }
+
+  // 5) 空白鍵：顯示答案（僅在不是輸入框時）
+  if (event.key === ' ') {
+    const questionContainer = document.getElementById('question-container');
+    if (questionContainer) {
+      event.preventDefault(); // 避免頁面往下捲
+      revealAnswer({ target: questionContainer });
+    }
+    return;
+  }
+
+  // 6) 數字選項快捷鍵（1~9）：在「遮住答案」且尚未作答時生效
+  const isAnswerHidden = document.getElementById('hideAnswers')?.checked;
+  if (isAnswerHidden && !answered) {
+    const optionIndex = parseInt(event.key, 10) - 1; // '1' -> 0
+    if (!Number.isNaN(optionIndex) &&
+        filteredQuestions[currentIndex] &&
+        optionIndex >= 0 &&
+        optionIndex < filteredQuestions[currentIndex].options.length) {
+      const checkboxes = document.querySelectorAll('.answer-checkbox');
+      const targetCheckbox = checkboxes[optionIndex];
+      if (targetCheckbox) {
+        event.preventDefault();
+        if (isMultipleChoice) {
+          targetCheckbox.checked = !targetCheckbox.checked;
+        } else {
+          targetCheckbox.checked = true;
+          checkAnswer(targetCheckbox);
+          answered = true;
         }
       }
-      if (isMultipleChoice && event.key === 'Enter') {
-        const submitButton = document.getElementById('submit-button');
-        if (submitButton) submitButton.click();
-      }
-    });
+    }
+  }
 
-    document.addEventListener('keydown', function(event) {
-      if (event.key === ' ') {
-        const questionContainer = document.getElementById('question-container');
-        if (questionContainer) { revealAnswer({ target: questionContainer }); }
-      }
-    });
+  // 7) Enter：複選題送出
+  if (isMultipleChoice && event.key === 'Enter') {
+    const submitButton = document.getElementById('submit-button');
+    if (submitButton) {
+      event.preventDefault();
+      submitButton.click();
+    }
+  }
+});
+
+   
 
     function shuffleOptions(options) {
       const fixedOptions = options.filter(opt => /(皆是|皆否|皆對|皆錯|皆可|皆非|以上兩點皆須|以上皆須)/.test(opt.option));
