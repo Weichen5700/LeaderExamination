@@ -278,7 +278,10 @@
     color: #005fa3;
 }
 
-
+#examALL {
+    background-image: none;
+    background-color: #ff6f61;
+}
 
     </style>
 </head>
@@ -296,6 +299,9 @@
             </button>
             <button id="examPlan" class="img-button" onclick="startPlan()">
                 <span>讀書計畫</span>
+            </button>
+			 <button id="examALL" class="img-button" onclick="examALL()">
+                <span>題目答案版</span>
             </button>
         </div>
 
@@ -363,6 +369,9 @@
 
         function startPlan() {
             window.location.href = 'https://weichen5700.github.io/LeaderExamination/複習計畫.html';
+        }
+		function examALL() {
+            window.location.href = 'https://weichen5700.github.io/LeaderExamination/output.html';
         }
 
         document.addEventListener('DOMContentLoaded', function () {
